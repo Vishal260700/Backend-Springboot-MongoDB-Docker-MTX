@@ -2,41 +2,36 @@ package com.example.demo;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 @Data
 @Document
 public class user {
+    // Imp
     @Id
     private String id;
-    private String firstName;
-    private String lastName;
-    @Indexed(unique = true)
+    private String name;
     private String email;
-    private Gender gender;
-    private Address address;
-    private List<String> favouriteSubjects;
-    private BigDecimal totalSpentInBooks;
-    private LocalDateTime created;
+    private String title;
+    private String team;
+    private List<String> technologies;
+    private List<Map<String, String>> exp;
 
-    public user(String firstName,
-                String lastName,
+    public user(String name,
                 String email,
-                Gender gender,
-                Address address,
-                List<String> favouriteSubjects,
-                BigDecimal totalSpentInBooks) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+                String title,
+                String team,
+                List<Map<String, String>> exp,
+                List<String> technologies) {
+
+        this.name = name;
+        this.title = title;
         this.email = email;
-        this.gender = gender;
-        this.address = address;
-        this.favouriteSubjects = favouriteSubjects;
-        this.totalSpentInBooks = totalSpentInBooks;
+        this.team = team;
+        this.technologies = technologies;
+        this.exp = exp;
     }
 }

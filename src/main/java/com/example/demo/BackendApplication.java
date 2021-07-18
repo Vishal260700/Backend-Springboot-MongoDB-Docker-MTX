@@ -18,6 +18,7 @@ public class BackendApplication {
 		SpringApplication.run(BackendApplication.class, args);
 	}
 
+	/*
 	@Bean
 	CommandLineRunner runner(UserRepository repository, MongoTemplate mongoTemplate) {
 		return args -> {
@@ -55,6 +56,8 @@ public class BackendApplication {
 
 		};
 	}
+	*/
+
 
 	private void usingMongoTemplateQuery(UserRepository repository, MongoTemplate mongoTemplate, String queryMail, user newUser) {
 		Query query = new Query();
