@@ -1,10 +1,10 @@
 package com.example.demo;
 
 import lombok.AllArgsConstructor;
-import org.bson.json.JsonObject;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -66,11 +66,13 @@ public class UserController {
         userRepository.insert(newUser);
     }
 
+
     /* POST REQUESTS */
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/editUserDetail")
     public void editUser(@RequestBody user editedUser){
         userRepository.save(editedUser);
     }
+
 
 }
